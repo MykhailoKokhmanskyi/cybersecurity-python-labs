@@ -9,13 +9,15 @@ passwords = ["APT@Detect10n", "simple", "Red@Team2023", "participant", "BLue@T3a
 criteria = {"min_length": 7, "require_digits": True, "require_upper": True, "require_special": True}
 forbidden_passwords = {"simple", "participant", "common123", "regular123", "normal123", "test"}
 
+for i in range(3):
+    passwords.append(passwords[random.randrange(0, len(passwords)-1)])
+
 width = max([len(x) for x in (passwords + ["Пароль"])])
 
 print("Пароль" + " " * (width-6) + " | Вердикт")
 print("-" * (width+15))
 
-for i in range(3):
-    password = passwords[random.randrange(0, len(passwords)-1)]
+for password in passwords:
     print(password + " " * (width-len(password)), end=" | ")
     if len(password) < criteria["min_length"] or password in forbidden_passwords:
         print("Заборонений")
@@ -45,7 +47,7 @@ for i in range(3):
         case 2:
             print("Середній")
         case 3:
-            if(len(password) < criteria["min_length"]+4):
+            if (len(password) < criteria["min_length"]+4) or (sum([x==password for x in passwords]) > 1):
                 print("Сильний")
             else:
                 print("Дуже сильний")
