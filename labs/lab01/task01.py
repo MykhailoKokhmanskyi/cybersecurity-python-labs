@@ -5,10 +5,6 @@ import random
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 from shared.student import *
 
-passwords = ["APT@Detect10n", "simple", "Red@Team2023", "participant", "BLue@T3am", "common123", "Purple@T34m", "regular123", "Gr33n@Team", "normal123"]
-criteria = {"min_length": 7, "require_digits": True, "require_upper": True, "require_special": True}
-forbidden_passwords = {"simple", "participant", "common123", "regular123", "normal123", "test"}
-
 for i in range(3):
     passwords.append(passwords[random.randrange(0, len(passwords)-1)])
 
