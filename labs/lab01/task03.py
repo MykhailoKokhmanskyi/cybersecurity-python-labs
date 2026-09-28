@@ -1,9 +1,9 @@
-import sys
-import os
+import functools
 import hashlib
 import json
-import functools
-from datetime import datetime
+import os
+import sys
+from datetime import datetime, timezone
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 from shared.student import *
@@ -43,7 +43,7 @@ def log_event(func):
         try:
             res = func(*args, **kwargs)
             result_status = "success" if res else "failure"
-        except Exception as e:
+        except Exception: # noqa: BLE001
             result_status = "failure"
             res = None
 
@@ -53,7 +53,7 @@ def log_event(func):
             "event": "login",
             "user": str(user),
             "result": result_status,
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
             "args": list(args),
             "kwargs": kwargs
         }
@@ -124,7 +124,7 @@ def login(username: str, password: str) -> bool:
     user = users_db[uid]
     try:   
         return validate_blake2b(password, user[1], SALT)
-    except:
+    except: # noqa: E722
         return False
 
 def main():
@@ -135,8 +135,8 @@ def main():
         users_db = ()
         for user in users_db_raw:
             split = user.split(",")
-            users_db += tuple([tuple([split[0], split[1][:-1].strip()])])
-        width = max([len(u[0]) for u in (users_db + tuple([tuple(["Ім'я користувача", ""])]))])
+            users_db += ((split[0], split[1][:-1].strip()),)
+        width = max([len(u[0]) for u in (users_db + (("Ім'я користувача", ""),))])
         print("Ім'я користувача | Хеш паролю")
         print("-" * (width + len(users_db[0][1]) + 3))
         for user in users_db:

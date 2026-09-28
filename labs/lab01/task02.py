@@ -1,6 +1,5 @@
-import sys
 import os
-import random
+import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 from shared.student import *
@@ -18,7 +17,7 @@ for username in users:
     userdata = users[username]
     for resource in resources:
         status = "ALLOW"
-        if username not in users.keys():
+        if username not in users:
             status = "DENY (User not found)" # as required by assignment. check every existing user if they exist in the database duh
         elif username in blocked_users:
             status = "DENY (User is blocked)"

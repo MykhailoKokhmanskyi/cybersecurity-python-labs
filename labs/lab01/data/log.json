@@ -86,5 +86,49 @@
             "wrong"
         ],
         "kwargs": {}
+    },
+    {
+        "event": "login",
+        "user": "admin",
+        "result": "success",
+        "timestamp": "2026-09-25 13:41:49",
+        "args": [
+            "admin",
+            "securePassword"
+        ],
+        "kwargs": {}
+    },
+    {
+        "event": "login",
+        "user": "admin",
+        "result": "failure",
+        "timestamp": "2026-09-25 13:41:49",
+        "args": [
+            "admin",
+            "wrongPassword"
+        ],
+        "kwargs": {}
+    },
+    {
+        "event": "login",
+        "user": "user1",
+        "result": "success",
+        "timestamp": "2026-09-25 13:41:49",
+        "args": [
+            "user1",
+            "user1user1user1"
+        ],
+        "kwargs": {}
+    },
+    {
+        "event": "login",
+        "user": "user1",
+        "result": "failure",
+        "timestamp": "2026-09-25 13:41:49",
+        "args": [
+            "user1",
+            "wrong"
+        ],
+        "kwargs": {}
     }
 ]
