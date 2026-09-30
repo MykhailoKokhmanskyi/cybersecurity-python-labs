@@ -54,6 +54,17 @@
 
 	forbidden_passwords = {"basic", "client", "general", "generic", "standard123", "guest"}
 \end{lstlisting}
+\textbf{Виконання:}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{lab1task1code.png}
+	\caption{Код завдання 1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{lab1task1result.png}
+	\caption{Результат виконання завдання 1}
+\end{figure}
 \subsection{Завдання 2: Багаторівнева система контролю доступу}
 Розробіть прототип системи розмежування доступу користуачів до конфіденційних ресурcів.
 
@@ -93,6 +104,22 @@
 
 	blocked_users = {"obsolete_system", "contract_expired", "legal_hold"}
 \end{lstlisting}
+\textbf{Виконання:}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{lab1task2code.png}
+	\caption{Код завдання 2}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{lab1task2result.png}
+	\caption{Результат виконання завдання 2 (1 з 2)}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{lab1task2result2.png}
+	\caption{Результат виконання завдання 2 (2 з 2)}
+\end{figure}
 \subsection{Завдання 3: Безпечне хешування, CVS-база та JSON-логування з винятками}
 Реалізуйте модуль для безпечної реєстрації та автентифікації користувачів, використовуючи функції, декоратори та роботу з файлами.
 
@@ -136,6 +163,37 @@
 	\item \textbf{Обробка винятків:} Увесь код роботи з файлами та входу обгорніть у блоки \verb|try...except| із обробкою винятків: \verb|FileNotFoundError|, \verb|PermissionError|, \verb|IOError|, \verb|ValidationError| та \verb|ValueError|.
 	\item Організуйте весь запуск через головну функцію \verb|main()|.
 \end{enumerate}
+\textbf{Виконання:}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{lab1task3code.png}
+	\caption{Код завдання 3 (1 з 3)}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{lab1task3code2.png}
+	\caption{Код завдання 3 (2 з 3)}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{lab1task3code3.png}
+	\caption{Код завдання 3 (3 з 3)}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{lab1task3result.png}
+	\caption{Результат виконання завдання 3}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{lab1task3users.png}
+	\caption{Формат файлу users.csv}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{lab1task3log.png}
+	\caption{Формат файлу log.json}
+\end{figure}
 \textbf{Варіант завдання:}
 \begin{itemize}
 	\item Алгоритм хешування: \verb|blake2b|
