@@ -1,0 +1,8 @@
+[INFO] Parsing ARP table snapshot from labs/lab02/data/arp_table.csv...
+[WARNING] Invalid entry skipped: ['IP Address', 'MAC Address', 'Interface', 'Type']
+[WARNING] Invalid entry skipped: ['999.168.1.30', 'AA:BB:CC:DD:EE:30', 'eth0', 'dynamic']
+[WARNING] Invalid entry skipped: ['192.168.1.31', 'GG:11:22:33:44:55', 'eth0', 'dynamic']
+[WARNING] Invalid entry skipped: ['192.168.1.32', '0011.2233.4455', 'eth0', 'dynamic']
+[INFO] Validated 12 IP/MAC entries.
+[CRITICAL] ARP spoofing: MAC de:ad:be:ef:00:01 bound to 192.168.1.20,192.168.1.21,192.168.1.22
+[INFO] Report saved to labs/lab02/data/arp_security_alerts.json

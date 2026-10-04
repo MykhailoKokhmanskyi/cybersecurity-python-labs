@@ -1,6 +1,7 @@
 import argparse
 from datetime import datetime, timedelta
 
+from labs.lab02 import task2
 from labs.lab02.task1 import *
 
 
@@ -8,6 +9,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="lab2.lab02.main")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("demo")
+    analyze = sub.add_parser("analyze")
+    task2.add_arguments(analyze)
     return parser
 
 
@@ -82,7 +85,7 @@ Email користувача User до зміни: {standard_account.user.email}
 
         return 0
 
-    return 2
+    return task2.run(args)
 
 
 if __name__ == "__main__":
