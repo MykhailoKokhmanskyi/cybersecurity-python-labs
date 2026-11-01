@@ -19,7 +19,7 @@ LOGOUT = "logout"
 class User:
     def __init__(self, username: str, email: str, role: str, active: bool):
         self.username = username
-        self.email = email
+        self._email = email
         self.role = role
         self.active = active
 
@@ -56,7 +56,7 @@ class User:
 
     def __str__(self):
         status = "active" if self.active else "inactive"
-        return f"User(username={self.username}, email={self.email}, role={self.role}, {status})"
+        return f"User(username={self.username}, email={self._email}, role={self.role}, {status})"
 
 
 class Admin(User):
@@ -90,7 +90,7 @@ class Session:
 
     def is_active(self, timeout_sec: int) -> bool:
         if timeout_sec < 0:
-            return False
+            return True
         return (
             datetime.now(timezone.utc) - self.last_activity
         ).total_seconds() <= timeout_sec
